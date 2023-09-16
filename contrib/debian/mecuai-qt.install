@@ -1,0 +1,6 @@
+usr/local/bin/mecuai-qt usr/bin
+share/pixmaps/mecuai32.xpm usr/share/pixmaps
+share/pixmaps/mecuai16.xpm usr/share/pixmaps
+share/pixmaps/mecuai128.png usr/share/pixmaps
+debian/mecuai-qt.desktop usr/share/applications
+debian/mecuai-qt.protocol usr/share/kde4/services/

@@ -1,0 +1,25 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="ar">locale/mecuai_ar.qm</file>
+        <file alias="bg">locale/mecuai_bg.qm</file>
+        <file alias="de">locale/mecuai_de.qm</file>
+        <file alias="en">locale/mecuai_en.qm</file>
+        <file alias="es">locale/mecuai_es.qm</file>
+        <file alias="fi">locale/mecuai_fi.qm</file>
+        <file alias="fr">locale/mecuai_fr.qm</file>
+        <file alias="it">locale/mecuai_it.qm</file>
+        <file alias="ja">locale/mecuai_ja.qm</file>
+        <file alias="ko">locale/mecuai_ko.qm</file>
+        <file alias="nl">locale/mecuai_nl.qm</file>
+        <file alias="pl">locale/mecuai_pl.qm</file>
+        <file alias="pt">locale/mecuai_pt.qm</file>
+        <file alias="ro">locale/mecuai_ro.qm</file>
+        <file alias="ru">locale/mecuai_ru.qm</file>
+        <file alias="sk">locale/mecuai_sk.qm</file>
+        <file alias="th">locale/mecuai_th.qm</file>
+        <file alias="tr">locale/mecuai_tr.qm</file>
+        <file alias="vi">locale/mecuai_vi.qm</file>
+        <file alias="zh_CN">locale/mecuai_zh_CN.qm</file>
+        <file alias="zh_TW">locale/mecuai_zh_TW.qm</file>
+    </qresource>
+</RCC>

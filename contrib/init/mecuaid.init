@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+#
+#  mecuaid The MecuAI Core server.
+#
+#
+# chkconfig: 345 80 20
+# description: mecuaid
+# processname: mecuaid
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/mecuaid, see below
+if [ -f /etc/sysconfig/mecuaid ]; then
+        . /etc/sysconfig/mecuaid
+fi
+
+RETVAL=0
+
+prog=mecuaid
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/mecuaid
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/mecuaid}
+
+# mecuaid defaults to /usr/bin/mecuaid, override with BITCOIND_BIN
+mecuaid=${BITCOIND_BIN-/usr/bin/mecuaid}
+
+# mecuaid opts default to -disablewallet, override with BITCOIND_OPTS
+mecuaid_opts=${BITCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $mecuaid $mecuaid_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

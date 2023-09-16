@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=MecuAI Core
+Comment=MecuAI P2P Cryptocurrency
+Comment[de]=Verbinde mit dem MecuAI peer-to-peer Netzwerk
+Comment[fr]=MecuAI, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=MecuAI, eşten eşe kriptografik sanal para birimi
+Exec=mecuai-qt %u
+Terminal=false
+Type=Application
+Icon=mecuai128
+MimeType=x-scheme-handler/mecuai;
+Categories=Office;Finance;

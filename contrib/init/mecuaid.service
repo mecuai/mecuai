@@ -1,0 +1,22 @@
+[Unit]
+Description=MecuAI's distributed currency daemon
+After=network.target
+
+[Service]
+User=mecuaicore
+Group=mecuaicore
+
+Type=forking
+PIDFile=/var/lib/mecuaid/mecuaid.pid
+ExecStart=/usr/bin/mecuaid -daemon -pid=/var/lib/mecuaid/mecuaid.pid \
+-conf=/etc/mecuaicore/mecuai.conf -datadir=/var/lib/mecuaid -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

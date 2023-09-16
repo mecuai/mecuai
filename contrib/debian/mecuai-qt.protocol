@@ -1,0 +1,11 @@
+[Protocol]
+exec=mecuai-qt '%u'
+protocol=mecuai
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false
