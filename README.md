@@ -1,4 +1,4 @@
-MecuAI Core Latest v1.1.6.8
+MecuAI Core Latest v1.2.6.8
 ===========================
 
 |CI|master|develop|
