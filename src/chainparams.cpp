@@ -551,7 +551,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_V17].nFalloffCoeff = 5; // this corresponds to 10 periods
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // block 0 chainwork
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000027589619736"); // block 3600 chainwork
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x001db9ce9a1fc6b45c451f69d9784a792f4a308fdf2e9ef1647b132943cbb89b"); // block hash for 0
@@ -596,9 +596,8 @@ public:
 //        	std::cout << "mainnet is disable" << endl;
 //        	exit(0);
 //        }
-        std::vector<FounderRewardStructure> rewardStructures = { {3600, 25},// 25%
-                                                            {INT_MAX, 10}// 10% founder/dev fee forever
-                                                            };
+        std::vector<FounderRewardStructure> rewardStructures =  {  {INT_MAX, 10} };// 5% founder/dev fee forever
+		
         consensus.nFounderPayment = FounderPayment(rewardStructures, 8.40);
         consensus.nCollaterals = SmartnodeCollaterals(
           { {88720, 15120 * COIN},
@@ -643,7 +642,8 @@ public:
         fBIP9CheckSmartnodesUpgraded = true;
 
         checkpointData = {
-          {  
+          {  {2668, uint256S("0x3587b3d0ba82458ff34caa1798d848291fe12016c685feaa3209a902798df817")},
+             {3600, uint256S("0x6d4e616189db3bf29ff4848cec5f20fac809ec4e2cdc2ec4b557201dbf80d207")}             
 
           }
         };
